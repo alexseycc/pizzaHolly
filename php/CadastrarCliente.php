@@ -6,7 +6,7 @@ $c1=new cliente();
 
 
 //preparando valores para objetos e classes
-$c1->setNome($_GET['nome']);
+$c1->setNome("alan");
 $c1->setCpf($_GET['cpf']);
 $c1->setRg($_GET['rg']);
 $c1->setNascimento($_GET['nascimento']);
@@ -16,7 +16,9 @@ $c1->setEmail($_GET['email']);
 $c1->setTelefone($_GET['telefone']);
 
 //inserção de addos
-$insert=$con->prepare("insert into cliente values(:nome,:cpf,:rg,:nascimento,:rua,:bairro,:email,:telefone)");
+$insert=$con->prepare('insert into cliente 
+(nome,cpf,rg,nascimento,rua,bairro,email,telefone) 
+values(:nome,:cpf,:rg,:nascimento,:rua,:bairro,:email,:telefone)');
 $insert->bindValue(':nome',$c1->getNome());
 $insert->bindValue(':cpf',$c1->getCpf());
 $insert->bindValue(':rg',$c1->getRg());

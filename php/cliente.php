@@ -3,6 +3,8 @@ include "conexao.php";
 //include "pessoa.php";
 
 class cliente{
+
+  
 public $nome;
 public $cpf;
 public $rg;  

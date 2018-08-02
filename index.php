@@ -40,9 +40,15 @@ $c1=new cliente();
   <input type="button" value="cadastrar" id="cad" />
   </form>
   </fildset>
+  <?php
+$c1->setNome("alan");
+echo $c1->getNome();
+$insert=$con->prepare('insert into cliente (nome) values (:nome)');
+$insert->bindValue(':nome',$c1->getNome());
+?>
 <script>
 $(document).ready(function(){
-    $("#cad").click(function(){
+   $("#cad").click(function(){
     //$("#formulario")[0].reset();
       $.get("./php/CadastrarCliente.php",$("#formulario").serialize());
  alert("Cadastro Realizado com Sucesso!");
