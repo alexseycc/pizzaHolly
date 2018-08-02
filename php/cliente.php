@@ -76,5 +76,10 @@ public $telefone;
   }
   */
 
-
+public function remove($con){
+  $remove=$con->prepare('delete from cliente where nome=" "');
+  //$remove->bindValue('');
+  $remove->execute();
+$con=null;
+}
 }

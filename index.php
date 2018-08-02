@@ -19,17 +19,18 @@ $c1=new cliente();
   <meta charset="UTF-8">
   <title>
  <?php
+    /*
       $title=$con->prepare("select nome from pizzaria");
    $title->execute();
    $title=$title->fetch(); 
    echo $title['nome'];
-
+*/echo $piz->Titulo($con);
     ?>
   </title>
 </head>
   <pre>
   <fildset>
-    <h2>PizzaHollyCliente</h2>
+    <h2><?php echo $piz->Titulo($con);?>Cliente</h2>
   <form id="formulario">
   Cliente              <input type="text" name="nome" id="nome">
   Cpf                  <input type="text" name="cpf" id="cpf">
@@ -39,7 +40,8 @@ $c1=new cliente();
   Bairro               <input type="text" name="bairro" id="bairro">
   Email                <input type="email" name="email" id="email">
   Telefone             <input type="tel" name="telefone" id="telefone">
-  <input type="button" value="cadastrar" id="cad" />
+                      
+                       <input type="button" value="cadastrar" id="cad" style="width:150px"/>
   </form>
   </fildset>
 <script>

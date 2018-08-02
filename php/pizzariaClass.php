@@ -4,10 +4,13 @@ require "conexao.php";
 class pizzariaClass{
 
   public $nome;
-  public $dono;
+  public $email;
   public $telefone;
   public $endereco;
   
+  
+  
+
   public function getNome(){
   return $this->nome;
  
@@ -18,12 +21,12 @@ class pizzariaClass{
   }
 
   
-public function getDono(){
-  return $this->dono;
+public function getEmail(){
+  return $this->email;
   }
   
-  public function setDono($dono){
-$this->dono=$dono;
+  public function setEmail($email){
+$this->email=$email;
   }
   
   public function getTelefone(){
@@ -49,7 +52,13 @@ public function Titulo($con){
    $title->execute();
    $title=$title->fetch(); 
    echo $title['nome'];
-    }
-  
+$con=null;    
+}
+ 
+  public function remove($con){
+    $re=$con->prepare('delete from pizzaria where nome is null');
+    $re->execute();
+    $con=null;
+  }
   
 }
