@@ -10,6 +10,10 @@ $insert->bindValue(':nome',nome);
 $insert->bindValue(':value',value);
 $insert->execute();
 $insert=null;
+
+mysli_num_rows
+pdo->rowCount();
+pdo-fetchcolumn();
 '
 
 
