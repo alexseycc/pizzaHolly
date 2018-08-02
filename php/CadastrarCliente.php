@@ -6,7 +6,7 @@ $c1=new cliente();
 
 
 //preparando valores para objetos e classes
-$c1->setNome("alan");
+$c1->setNome($_GET['nome']);
 $c1->setCpf($_GET['cpf']);
 $c1->setRg($_GET['rg']);
 $c1->setNascimento($_GET['nascimento']);
