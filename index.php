@@ -1,13 +1,14 @@
 <?php
 //classes 
-include "./php/pizzaria.php";
+require "./php/pizzariaClass.php";
 include "./php/conexao.php";
-include "./php/cliente.php";
+require "./php/cliente.php";
 ?>
 <?php
 //objetos
-$piz=new pizzaria();
+$piz=new pizzariaClass();
 $c1=new cliente(); 
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,10 +19,11 @@ $c1=new cliente();
   <meta charset="UTF-8">
   <title>
  <?php
-    $title=$con->prepare("select nome from pizzaria");
+      $title=$con->prepare("select nome from pizzaria");
    $title->execute();
    $title=$title->fetch(); 
-    echo $title['nome'];
+   echo $title['nome'];
+
     ?>
   </title>
 </head>

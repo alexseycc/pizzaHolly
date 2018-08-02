@@ -1,10 +1,10 @@
 <?php
 include "conexao.php";
-//include "pessoa.php";
+include "pessoa.php";
 
-class cliente{
+class cliente extends pessoa{
 
-  
+  /*
 public $nome;
 public $cpf;
 public $rg;  
@@ -74,8 +74,7 @@ public $telefone;
   public function getTelefone(){
   return $this->telefone;  
   }
-  
-  
+  */
 
 
 }

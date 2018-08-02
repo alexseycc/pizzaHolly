@@ -1,6 +1,7 @@
 <?php
-include "conexao.php";
-class pizzaria{
+require "conexao.php";
+
+class pizzariaClass{
 
   public $nome;
   public $dono;
@@ -41,4 +42,14 @@ $this->telefone=$telefone;
 $this->endereco=$endereco;
   }
 
+  
+
+public function Titulo($con){
+  $title=$con->prepare("select nome from pizzaria");
+   $title->execute();
+   $title=$title->fetch(); 
+   echo $title['nome'];
+    }
+  
+  
 }

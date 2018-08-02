@@ -1,6 +1,5 @@
 <?php
 include "conexao.php";
-
 class pessoa{
 public $nome;
 public $cpf;
