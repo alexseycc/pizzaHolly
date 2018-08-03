@@ -72,8 +72,7 @@ public $telefone;
     
   }
   public function getTelefone(){
-  return $this->telefone;  
-  }
+  return $this->telefone;   }
   */
 
 public function remove($con){

@@ -30,10 +30,10 @@ $c1 = new cliente();
     </container>
   </div>
 <?php
-for($i=1;$i<=5;$i++)
+for($i=1;$i<=3;$i++)
 echo "<br>";
 ?>
-<p id="result">
+<p id="result" align="center">
   
 </p>
 
@@ -47,6 +47,12 @@ $(document).ready(function(){
      // alert(data);
     $("#result").html(data);
     });
+    
+  });
+  
+  
+  $("#remove").click(function(){
+    alert('clickando');
     
   });
   
