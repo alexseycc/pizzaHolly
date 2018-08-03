@@ -5,7 +5,8 @@ require "cliente.php";
 ?>
 <?php
 $piz=new pizzariaClass();
-?>
+$c1 = new cliente();
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +22,8 @@ $piz=new pizzariaClass();
 <body>
   <div>
     <container id="container">
-      <form id="formulario">
-  <label for="">PizzariaNome</label><input type="text" name="PizzariaNome" id="PizzariaNome" class="PaizzariaNome">
+      <form id="formulario" method="get">
+  <label for="">PizzariaNome</label><input type="text" name="PizzariaNome" id="PizzariaNome" class="PaizzariaNome" value="staling">
   <br>
   <label for="">Endereco</label><input type="text" name="Endereco" id="Endereco" class="Endereco">
   <br>
@@ -35,13 +36,17 @@ $piz=new pizzariaClass();
       </container>
   </div>
   <?php
-// echo "<script typt='text/javascript'>alert('Pizzaria já Existente')</script>";
- // $piz->remove($con);
+  $select=$con->query('select count(*) from pizzaria')->rowcount();
   ?>
+  <script>
+   var mensagem = "<?php echo $select;?>";
+   //alert(mensagem);
+ // document.write(mensagem);
+  </script>
 <script>
   $(document).ready(function(){
   $("#cad").click(function(){
-    var count=2;
+    var count="<?php echo $select;?>";
   $.ajax({
    url:"CadastroPizzaria.php", 
    data:$("formulario").serialize()/*{PizzariaNome:PizzariaNome,Endereco:Endereco,:Telefone:Telefone,Email:Email}*/, 
@@ -58,8 +63,15 @@ $piz=new pizzariaClass();
   });  
   });  
   });
-    
-  
   </script>
+  <?php
+  $nome="<script>document.write(document.getElementById('PizzariaNome').value)</script>";
+  $c1->setNome($nome);
+  echo "alan<br>";
+  echo $c1->getNome();
+  echo "<br>".$select;
+// echo "<script typt='text/javascript'>alert('Pizzaria já Existente')</script>";
+ // $piz->remove($con);
+  ?>
   </body>
 </html>
