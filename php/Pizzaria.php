@@ -39,9 +39,9 @@ $c1 = new cliente();
   $select=$con->query('select count(*) from pizzaria')->rowcount();
   ?>
   <script>
-   var mensagem = "<?php echo $select;?>";
+   var quantidade = "<?php echo $select;?>";
    //alert(mensagem);
- // document.write(mensagem);
+  //document.write(quantidade);
   </script>
 <script>
   $(document).ready(function(){

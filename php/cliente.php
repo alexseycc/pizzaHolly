@@ -82,4 +82,16 @@ public function remove($con){
   $remove->execute();
 $con=null;
 }
+  public function clientes($con){
+    $select=$con->prepare('select * from cliente');
+    $select->execute();
+    //$usuarios=$select->fetch(PDO::FETCH_ASSOC|FETCH::OBJECT);
+    //->fetch||ftechobject()
+ //  while($usuarios=$select->fetch(PDO::FETCH_ASSOC)){
+   while($usuarios=$select->fetchobject()){
+  echo "<option>".$usuarios->nome."</option>";
+   }
+   }
+
+
 }
