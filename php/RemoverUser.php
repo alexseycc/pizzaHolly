@@ -5,13 +5,14 @@
 <?php
 require "cliente.php";
 require "conexao.php";
+//require "pessoa.php";
 
-$c1=new cliente();
-$c1->setNome($_POST['selections']);
+$p1=new pessoa();
+$p1->setNome($_POST['selections']);
 
 
 $select=$con->prepare("select * from cliente where nome = :nome");
-$select->bindValue(':nome',$c1->getNome());
+$select->bindValue(':nome',$p1->getNome());
 $select->execute();
 //$dado=$select->fetch();-->objeto está vindo do banco,ñ da casse!,cada coluna um obj
 $dado=$select->fetchobject();
@@ -27,6 +28,7 @@ echo "<br>Nome:\t".$dado->nome."<br><input type='text' placeholder='novonome' id
   "<br>DDD:\t".$dado->ddd."<br><input type='text' placeholder='novonome' name='ddd'/>".
   "<br>Telefone:\t".$dado->telefone."<br><input type='text' placeholder='novonome' name='telefone'/>"."<p>";
 echo "<form>";
+$p1->setCpf($dado->cpf);
 $con=null;
 ?>
 
@@ -36,7 +38,7 @@ $con=null;
 
 <script>
   $(document).ready(function(){
-  var cpf2="<?php echo $c1->getCpf();?>";
+  var cpf2="<?php echo $p1->getCpf();?>";
   
     
     
@@ -54,7 +56,11 @@ $con=null;
   $.post("Atualizando.php",{btn:btn,cpf2:cpf2,nome:nome,cpf:cpf,rg:rg,nascimento:nascimento,rua:rua,bairro:bairro,email:email,telefone:telefone},function(){
 //  if(btn=='remove'){
 alert('removido com sucesso!');
-   // if(document.getElementById('nome').value =='')
+//alert("<?php echo $p1->getCpf();?>");
+      
+//alert("removido com sucesso:"+cpf2);
+//alert("<?php echo $p1->getNome();?>");
+      // if(document.getElementById('nome').value =='')
   //    alert('acertou');
 //}
     });
