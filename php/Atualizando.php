@@ -11,6 +11,15 @@ $select->execute();
 $dado=$select->fetch();
 
 
+/*------> teste 
+if(empty($_REQUEST['email']))
+echo "vazio";
+else{
+echo "cheio";
+  }
+*/
+
+
 
 if(empty($_REQUEST['nome'])){
 $p1->setNome($dado['nome']);
@@ -60,7 +69,7 @@ $p1->setTelefone($dado['telefone']);
 else{
 $p1->setTelefone($_REQUEST['telefone']);  
 }
-#if butão for atualizar
+#if butão !for atualizar
 if($_REQUEST['btn']=='remove'){
   $delete=$con->prepare('delete from cliente where cpf = :cpf');
   $delete->bindValue(':cpf',$_REQUEST['cpf2']);
@@ -69,8 +78,8 @@ if($_REQUEST['btn']=='remove'){
   }
 else{
 //preparando valores para objetos e classes
-*/
-/*
+
+  /*
 $p1->setNome($_GET['nome']);
 $p1->setCpf($_GET['cpf']);
 $p1->setRg($_GET['rg']);
@@ -81,8 +90,8 @@ $p1->setEmail($_GET['email']);
 $p1->setTelefone($_GET['telefone']);
 */
 //inserção de addos
-/*
-$insert=$con->prepare('update cliente set nome=:nome,cpf=:cpf,rg=:rg,nascimento=:nascimento,rua:rua,rua=:bairro,email=:email,telefone=:telefone where cpf=:cpf2)');
+
+$insert=$con->prepare('update cliente set nome=:nome,cpf=:cpf,rg=:rg,nascimento=:nascimento,rua=:rua,bairro=:bairro,email=:email,telefone=:telefone where cpf=:cpf2');
 $insert->bindValue(':nome',$p1->getNome());
 $insert->bindValue(':cpf',$p1->getCpf());
 $insert->bindValue(':rg',$p1->getRg());
@@ -95,4 +104,3 @@ $insert->bindValue(':cp2',$_REQUEST['cpf2']);
 $insert->execute();  
 $con=null;
   }
-*/

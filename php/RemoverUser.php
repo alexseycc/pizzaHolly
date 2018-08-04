@@ -19,14 +19,14 @@ $dado=$select->fetchobject();
 
 echo "<form id='formulario'>";
 echo "<br>Nome:\t".$dado->nome."<br><input type='text' placeholder='novonome' id='nome' name='nome'/>".
-  "<br>Cpf:\t".$dado->cpf."<br><input type='text' placeholder='novonome' name='cpf'/>".
-  "<br>Rg:\t".$dado->rg."<br><input type='text' placeholder='novonome' name='rg'/>".
-  "<br>Nascimento:\t".$dado->nascimento."<br><input type='text' placeholder='novonome' name='nascimento'/>".
-  "<br>Rua:\t".$dado->rua."<br><input type='text' placeholder='novonome' name='rua'/>".
-  "<br>Bairro:\t".$dado->bairro."<br><input type='text' placeholder='novonome' name='bairro'/>".
-  "<br>Email:\t".$dado->email."<br><input type='text' placeholder='novonome' name='email'/>".
-  "<br>DDD:\t".$dado->ddd."<br><input type='text' placeholder='novonome' name='ddd'/>".
-  "<br>Telefone:\t".$dado->telefone."<br><input type='text' placeholder='novonome' name='telefone'/>"."<p>";
+  "<br>Cpf:\t".$dado->cpf."<br><input type='text' placeholder='novonome' name='cpf' id='cpf'/>".
+  "<br>Rg:\t".$dado->rg."<br><input type='text' placeholder='novonome' name='rg' id='rg'/>".
+  "<br>Nascimento:\t".$dado->nascimento."<br><input type='text' placeholder='novonome' name='nascimento' id='nascimento'/>".
+  "<br>Rua:\t".$dado->rua."<br><input type='text' placeholder='novonome' name='rua' id='rua'/>".
+  "<br>Bairro:\t".$dado->bairro."<br><input type='text' placeholder='novonome' name='bairro' id='bairro'/>".
+  "<br>Email:\t".$dado->email."<br><input type='text' placeholder='novonome' name='email' id='email'/>".
+  "<br>DDD:\t".$dado->ddd."<br><input type='text' placeholder='novonome' name='ddd' id='ddd'/>".
+  "<br>Telefone:\t".$dado->telefone."<br><input type='text' placeholder='novonome' name='telefone' id='telefone'/>"."<p>";
 echo "<form>";
 $p1->setCpf($dado->cpf);
 $con=null;
@@ -81,6 +81,15 @@ alert('removido com sucesso!');
   var telefone=$("#telefone").val();
   $.post("Atualizando.php",{btn:btn,cpf2:cpf2,nome:nome,cpf:cpf,rg:rg,nascimento:nascimento,rua:rua,bairro:bairro,email:email,telefone:telefone},function(){
   alert('atualizado com sucesso!');
+  alert(email);
+/*  alert("<?php echo $p1->getNome();?>"+nome);
+  alert(document.getElementById('cpf').value);
+  alert(rg);
+  alert(nascimento);
+  alert(rua);
+  alert(bairro);
+  alert(telefone);
+  */    
  });
 });
       /*if(btn=='remove'){
