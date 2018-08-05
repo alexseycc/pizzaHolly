@@ -21,18 +21,18 @@ $c1 = new cliente();
 </head>
 <body>
   <div>
-    <container>
+    <container><br><br>
       <select id="selections" name="selections">
        <?php echo $c1->clientes($con);?>
       </select>
     </container>
   </div>
     </container>
-  </div>
-<?php
-for($i=1;$i<=3;$i++)
+  </div> <h2><?php echo $piz->Titulo($con);?>Atualização</h2>
+<!--<?php
+for($i=1;$i<=1;$i++)
 echo "<br>";
-?>
+?>   -->
 <p id="result" align="center">
   
 </p>

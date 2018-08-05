@@ -82,7 +82,7 @@ public function remove($con){
 $con=null;
 }
   public function clientes($con){
-    $select=$con->prepare('select * from cliente');
+    $select=$con->prepare('select * from cliente order by nome');
     $select->execute();
     //$usuarios=$select->fetch(PDO::FETCH_ASSOC|FETCH::OBJECT);
     //->fetch||ftechobject()

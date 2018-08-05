@@ -1,8 +1,8 @@
 <?php
 //classes 
-require "./php/pizzariaClass.php";
-include "./php/conexao.php";
-require "./php/cliente.php";
+require "./pizzariaClass.php";
+include "./conexao.php";
+require "./cliente.php";
 ?>
 <?php
 //objetos
@@ -13,11 +13,12 @@ $c1=new cliente();
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="icon" href="./img/Pizza.ico"/>
-  <link rel="stylesheet" href="./css/index.css" />
-  <script src="./js/jquery.min.js" ></script>
+    <link rel="icon" href="../img/Pizza.ico"/>
+  <link rel="stylesheet" href="../css/index.css" />
+  <script src="../js/jquery.min.js" ></script>
   <meta charset="UTF-8">
   <title>
+    
  <?php
     /*
       $title=$con->prepare("select nome from pizzaria");
@@ -48,7 +49,7 @@ $c1=new cliente();
 $(document).ready(function(){
    $("#cad").click(function(){
     //$("#formulario")[0].reset();
-      $.get("./php/CadastrarCliente.php",$("#formulario").serialize());
+      $.get("./CadastrarCliente.php",$("#formulario").serialize());
  alert("Cadastro Realizado com Sucesso!");
     document.getElementById("formulario").reset();
     });

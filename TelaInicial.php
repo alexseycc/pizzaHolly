@@ -26,7 +26,7 @@ $c1=new cliente();
   <div class="container">
             <div class="content">
 <div class="title"> <?php echo $piz->Titulo($con); ?></div>
-            <input type="button" value="Cadastre Cliente" onclick="window.open('index.php','_blank')" /><input type="button" value="Consultar Dados" onclick="window.open('./php/usuario.php','_blank')"/>
+            <input type="button" value="Cadastrar Funcionário" onclick="window.open('./php/CadastrarFuncionario.php','_blank')" /><input type="button" value="Cadastrar Cliente" onclick="window.open('./php/index.php','_blank')" /><input type="button" value="Consultar Dados" onclick="window.open('./php/usuario.php','_blank')"/><input type="button" value="Fazer Compra" onclick="window.open('./php/usuario.php','_blank')"/>
             </div>
         </div>
 

@@ -9,7 +9,8 @@ public $rua;
 public $bairro;
 public $email;
 public $telefone;
-  
+public $salario;
+public $cargo;
     
   
   public function setNome($nome){
@@ -69,6 +70,24 @@ public $telefone;
   }
   public function getTelefone(){
   return $this->telefone;  
+  }
+  
+  public function setSalario($salario){
+    $this->salario=$salario;
+    
+  }
+  
+  public function getSalario(){
+    return $this->salario;
+  }
+  
+    public function setCargo($cargo){
+    $this->cargo=$cargo;
+    
+  }
+  
+  public function getCargo(){
+    return $this->cargo;
   }
   
 }
